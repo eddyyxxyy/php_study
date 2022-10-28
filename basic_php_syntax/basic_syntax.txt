@@ -1,0 +1,245 @@
+The way PHP is parsed is that it looks for the opening
+and closing tags. Example:
+
+````
+<?php
+
+?>
+````
+
+In pure PHP files there's no need for the closing tag,
+in fact, you should not put the closing tag in those
+kind of files. And that is to make sure that there is
+no accidental whitespace or new lines are added after
+the PHP closing tag, which could mess up your website.
+
+For example:
+
+````
+<?php
+
+?>
+
+Hello World
+````
+
+Even though we're rendering a page in the php block code,
+you would just add that unwanted space and text right after
+it.
+
+So the rule is: if pure PHP, then you should not use the
+PHP closing tag; but, if embedded PHP in HTML you have to
+use the opening and closing tag.
+
+----------------------------------------------------------
+
+To print "Hello World!" in the screen we can use echo.
+
+````
+<?php
+
+echo 'Hello World!';
+````
+
+PHP is a server-side language, so the actual code is not
+shown, what is shown are the code results of the code.
+
+Even though that statement is simple, it introduces us to
+three things:
+
+- echo is what you would use to print something;
+- Enclosing the text with a single or double quote,
+  which indicates it is a string;
+- All statements end with a semicolon.
+
+Don't ever forget the semicolon, or you're going to
+cause a Parse error.
+
+Actually, there's a couple of exceptions where the
+semicolon is not needed, for example:
+
+- When closing the PHP code block, and that means
+that you don't need the semicolon on the last line
+of code if you're closing an PHP code block.
+
+And that's useful when embedding PHP in HTML, and
+it's just a single line. But with multiple lines,
+it's always a good to stay consistent and use the
+semicolons.
+
+Using print is kind of different from using echo,
+print has a return value of 1, for example:
+
+````
+<?php
+
+print 'Hello World!';
+````
+
+That statement actually returns value. So, if you
+do:
+
+````
+<?php
+
+echo print 'Hello World!';
+````
+
+It would output: Hello World1. And, if you try to
+"print echo 'something';" it will raise an Parse
+error.
+
+Other syntax examples that "prints" the same result:
+
+````
+<?php
+
+echo('Hello World');
+
+print('Hello World');
+
+echo 'Hello', ' ', 'World';
+````
+
+OBS: you cant do a statement like the last one using print.
+
+Stick with echo unless you have an really specific reason
+not to.
+
+-------------------------------------------------------------
+
+Variables start with the dollar sign:
+
+````
+<?php
+
+$name = 'Edson';
+
+echo $name;
+````
+
+Every variable must either start with a letter
+or an underscore -> _ , the letter can be lowercase
+or uppercase, but it can not be a number or a special
+character. Examples:
+
+$_123name
+
+$_35
+
+$_im_a_variable
+
+Variables in PHP are by default assigned by value.
+
+````
+<?php
+
+$x = 1;
+$y = $x;
+
+$x = 3;
+
+echo $y;  # outputs 1
+````
+
+If you wanted to $y to change within $x, then we need
+to assign variables by reference instead of by value.
+
+````
+<?php
+
+$x = 1;
+$y = &$x;
+
+$x = 3;
+
+echo $y;  # outputs 3
+````
+
+Now, if $x or $y change, it will change one another.
+
+Another variable use example:
+
+````
+<?php
+
+$firstName = 'Edson';
+
+echo "Hello {$firstName}";
+````
+
+If we don't use double quotes we wont me able to get
+the value of the variables inside the string.
+
+Alternatively, we can do something like this:
+
+````
+<?php
+
+$firstName = 'Edson';
+
+echo 'Hello ' . $firstName;
+````
+
+The dot is a concatenation operator.
+
+And another great example is to use a shorter version
+of the echo in an embedded PHP within HTML:
+
+````
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+
+        <h1>
+            <?='Hello World'?>
+        </h1>
+        <p>My first paragraph</p>
+
+    </body>
+</html>
+````
+
+<?='Hello World'?>  == <?php echo 'Hello World' ?>
+
+We can also:
+
+````
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+
+        <h1>
+            <?='Hello World'?>
+        </h1>
+        <p>My first paragraph</p>
+        <?php
+            $x = 10;
+            $y = 5;
+
+            echo '<p>' . $x . ', ' . $y . '<p>';
+        ?>
+    </body>
+</html>
+````
+
+But it's not a good thing to mix HTML directly
+in your PHP code.
+
+------------------------------------------------------------
+
+Types of comments:
+
+// One line comment
+
+# One line comment
+
+/*
+    Multi line comment
+*/
+
+/**
+ *  Document blocks
+ */
+
+DO NOT NEST MULTI LINE COMMENTS
