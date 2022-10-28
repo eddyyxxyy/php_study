@@ -1,0 +1,65 @@
+Let's talk about Constants...
+
+Constants are a type of variables that
+their values can not change once they're
+defined.
+
+````
+<?php
+
+// Constants
+
+// define('STATUS_PAID', 'paid');
+const STATUS_PAID = 'paid';
+
+?>
+````
+
+There are two ways for defining Constants:
+
+- By using a function called define;
+    - define(<name>, <value>)
+- By using const keyword:
+    - const <name> = <value>;
+
+When echoing Constants we don't need to use
+the $ sign.
+
+To check if the Constant were defined, you can
+use defined() function.
+
+````
+<?php
+
+// Constants
+
+const STATUS_PAID = 'paid';
+
+echo defined('STATUS_PAID');  // returns bool - 1 or 0
+
+echo STATUS_PAID;
+
+?>
+````
+
+While const statements run at compile time, define function
+are at run time.
+
+That means you can't use const definitions within your control
+structures.
+
+````
+<?php
+
+// const STATUS_PAID = 'paid';
+
+if(true) {
+    // const FOO = 'bar'; -> WRONG
+    define('STATUS_PAID', 'paid');
+}
+
+?>
+````
+
+There are a few magic constants in PHP, so, just
+type in PHP and try to look at them.
