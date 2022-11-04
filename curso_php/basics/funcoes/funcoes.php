@@ -5,14 +5,14 @@ function connection(): PDO
     return new PDO(
         'mysql:host=localhost;dbname=test',
         'eddyxide',
-        'Eddyxidex!21'
+        'leandoer'
     );
 }
 
 function get_data($table): bool|array
 {
     $connection = connection();
-    $query = $connection->query("SELECT * FROM {$table}");
+    $query = $connection->query("SELECT * FROM $table");
     $query->execute();
     return $query->fetchAll();
 }
