@@ -12,3 +12,11 @@ function request() {
     }
     return $_GET;
 }
+
+function redirect($target) {
+    return header("location:/?page={$target}");
+}
+
+function redirect_to_home() {
+    return header("location:/");
+}

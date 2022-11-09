@@ -20,3 +20,14 @@ function validate(array $fields) {
 
     return (object) $validate;
 }
+
+function isEmpty() {
+    $request = request();
+
+    foreach ($request as $key => $value) {
+        if(empty($request[$key])) {
+            $empty = true;
+        }
+    }
+    return $empty;
+}
