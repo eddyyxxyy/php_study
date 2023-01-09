@@ -1,0 +1,27 @@
+O CakePHP utiliza MVC.
+
+MVC -> Model, View e Controller.
+
+A Model:
+    - Coração da aplicação;
+    - Responsável por saber tudo que a aplicação pode fazer;
+    - Modela os dados e o comportamento por trás do processo;
+    - Regras de negócio e validação de dados;
+    - Se preocupa em armazenar, manipular e gerar dados, sendo
+    totalmente independente da camada de apresentação (view).
+
+Por exemplo, a Model é responsável por verificar se um cliente realmente
+existe antes de salvar os dados, assim mantendo a integridade do sistema
+e dos dados, pois antes da venda ser salva, é a Model quem retorna esse
+erro para dentro da aplicação, para que o gerenciador de eventos realize
+o trabalho.
+
+A View:
+    - É a camada de interface com o usuário;
+    - Não quer saber de onde veio os dados, somente os exibe;
+    - Utilizada também para receber entradas de dados.
+
+O Controller:
+    - Responsável por interpretar as ações do usuário e encaminhar para a
+    Model (se necessário), atualizando consequentemente as Views que são 
+    dependentes da Model em questão.
