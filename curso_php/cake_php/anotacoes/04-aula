@@ -1,0 +1,88 @@
+Dentro da pasta "bin" temos 3 arquivos
+executáveis, para rodar comandos dentro
+do CakePHP, como o próprio comando
+"bin/cake server".
+
+Cada um dos arquivos é utilizado para
+executar em ambientes diferentes. O
+arquivo sem extenção se trata do arquivo
+para rodar comandos em sistemas Linux/Unix,
+o arquivo .bat para ambientes Windows e
+o arquivo .php para rodar em sistemas que
+tenham PHP instalado.
+
+Temos dois arquivos gerenciados pelo
+composer, o "composer.json" e "composer.lock".
+Esses dois arquivos tem tudo que nosso
+projeto depende (em relação às libs utilizadas)
+e nós não mexemos nos arquivos diretamente,
+somente por meio do composer.
+
+Dentro da pasta "config" temos toda a
+configuração do nosso projeto. Os arquivos
+"app.default.php" e "app.php" são as
+configurações iniciais do nosso projeto,
+onde salvamos configurações de bancos de dados,
+de cache, email, etc. Sendo respectivamente
+um backup e o principal. Temos também, os
+arquivos "bootstrap_cli.php" e "bootstrap.php"
+e eles contém tudo que queremos carregar antes
+de qualquer outra coisa na aplicação deverá
+ser feita nesses arquivos. Sendo respectivamente
+executados por linha de comando e web, e quando
+executamos o comando "bin/cake server", o CakePHP
+chama o "bootstrap_cli". Também temos constantes
+de "caminhos" no arquivo "path.php" e geralmente
+não mexemos nele. O arquivo "requirements.php" tem
+os requerimentos para a execução da nossa aplicação,
+o CakePHP já possui diversos requerimentos nesse arquivo,
+mas também podemos alterá-lo para adicionar nossos
+próprios requerimentos. Pelo arquivo "routes.php"
+temos então os "caminhos" para o entendimento do Cake
+em encontrar os Controllers. E na pasta "schema" temos
+alguns arquivos sql necessários para executar alguns
+plugins do CakePHP.
+
+Temos o arquivo "index.php" e nunca mexemos nele.
+Temos a pasta logs para acessar os logs gerados pelo
+CakePHP.
+Temos o arquivo "phpunit.xml.dist" para configurações
+de testes automatizados.
+Temos a pasta plugins.
+Temos a pasta src, onde realmente estarão os arquivos
+de nosso projeto.
+Temos a pasta tests, que será usado pelo phpunit.
+Temos a pasta tmp que é utilizada pelo próprio Cake.
+A pasta vendor que é de uso exclusivo do Composer.
+E por fim a pasta webroot, que salva todo arquivo
+estático, como html, css, js, imgs e fonts, por
+exemplo.
+
+
+Aprofundando mais sobre a pasta "src":
+
+    É a pasta onde salvaremos os arquivos do nosso
+    projeto, nela temos pastas com funções que o
+    CakePHP tem. Na subpasta Console podemos criar
+    nossos próprios Scripts e rodá-los via linha
+    de comando; em Controller é onde iremos salvar
+    os nossos Controllers (e dentro dessa subpasta
+    Controller ainda temos a subpasta Component, que
+    iremos explicar futuramente); em Model temos
+    3 subpastas que foram comentadas anteriormente,
+    são os três fragmentos da Model -> Behavior,
+    Entity e Table; também temos a subpasta Shell, que
+    tem a mesma função da subpasta Console, porém,
+    nas versões atuais não temos mais essa subpasta;
+    na subpasta Template temos nossos arquivos HTML,
+    mas com uma extenção diferente, seria a ctp ("Custom
+    Template" ou "CakePHP Template"); e na subpasta View
+    é onde salvamos as classes utilitárias, que usamos nos
+    nossos arquivos .ctp, que nos ajudam a construir a View,
+    são eles os Helpers e Cells (que também são subpastas de
+    View), além disso temos mais dois arquivos que possuem as
+    configurações iniciais da View. Faltando somente a
+    explicação sobre o arquivo "Application.php" que serve
+    para executar alguns scripts que configuram nossa aplicação,
+    é nesse arquivo que vamos carregar plugins, middlewares, criar
+    middlewares e algumas funções mais.
