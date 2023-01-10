@@ -76,7 +76,8 @@ Aprofundando mais sobre a pasta "src":
     nas versões atuais não temos mais essa subpasta;
     na subpasta Template temos nossos arquivos HTML,
     mas com uma extenção diferente, seria a ctp ("Custom
-    Template" ou "CakePHP Template"); e na subpasta View
+    Template" ou "CakePHP Template", porém, nas versões
+    mais atuais são ".php"); e na subpasta View
     é onde salvamos as classes utilitárias, que usamos nos
     nossos arquivos .ctp, que nos ajudam a construir a View,
     são eles os Helpers e Cells (que também são subpastas de
