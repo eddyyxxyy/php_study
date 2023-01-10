@@ -1,0 +1,47 @@
+Convenções do CakePHP
+
+Para Controllers:
+    - Pluralizados;
+    - CamelCased;
+    - Terminam sempre em Controller.
+
+Exemplos de Controllers:
+    - PeopleController;
+    - LatestArticlesController...
+
+Os métodos públicos de Controllers são frequentemente
+referenciados como "actions" acessíveis através de um
+navegador web. Por exemplo, o /articles/view mapeia
+para o método view() do ArticlesController sem nenhum
+esforço. Métodos privados ou protegidos não podem ser
+acessados pelo roteamento.
+
+Considerações de URL para nomes de Controller:
+
+Como você acabou de ver, controllers singulares mapeiam
+facilmente um caminho simples, todo em minúsculo. Por
+exemplo, ApplesController (o qual deveria ser definido
+no arquivo de nome ‘ApplesController.php’) é acessado por
+http://example.com/apples.
+
+Controllers com múltiplas palavras podem estar em qualquer
+forma ‘flexionada’ igual ao nome do controller, então:
+    - /redApples
+    - /Red_apples
+    - /red_apples
+    - /RedApples
+
+Todos resolverão para o index do controller RedApples. Porém,
+a forma correta é que suas URLs sejam minúsculas e separadas
+por sublinhado, portanto /red_apples/go_pick é a forma correta
+de acessar a action RedApplesController::go_pick.
+
+Quando você cria links usando this->Html->link(), você pode usar
+as seguintes convenções para a array de url:
+
+$this->Html->link('link-title', [
+    'prefix' => 'MyPrefix', // CamelCased
+    'plugin' => 'MyPlugin', // CamelCased
+    'controller' => 'ControllerName', // CamelCased
+    'action' => 'actionName' // camelBacked
+]
