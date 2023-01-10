@@ -15,6 +15,9 @@
  * que depois pode ser resgatado. Tod0 COOKIE
  * tem uma data de validade, quando o criamos
  * colocamos um prazo de validade.
+ * 
+ * Os Cookies contém valores de divermos tipos,
+ * podendo ser strings, numbers e arrays.
  */
 
 // $_SESSION
@@ -23,6 +26,9 @@
  * Uma SESSION é guardada no navegador, mas não
  * seu valor. É guardado um ID que, quando chamamos,
  * pela SESSION nos retorna o valor guardado nela.
+ * 
+ * Por padrão, o ID da sessão é um Cookie que contém
+ * uma Hash.
  */
 
 // $_ENV
