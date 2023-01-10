@@ -1,0 +1,22 @@
+CakePHP -> Build fast, grow solid.
+
+O Framework CakePHP fragmenta a Model (o coração da nossa
+aplicação) em diversos pedaços.
+
+Table:
+    - Responsável por definir regras de negócio, validação
+    de dados e qual comportamento a tabela ou coluna deve ter;
+    - Possui ciclos de vida que podem ser utilizados para
+    disparo de eventos.
+
+Entity:
+    - Responsável por definir como os campos se comportam no
+    momento de recupera-los ou definir seus valores;
+    - Possui campos virtuais.
+
+Behavior:
+    - Responsável por definir o comportamento de uma tabela
+    ou de uma coluna;
+    - Utilizado para compartilhar lógica entre as Tables e
+    Entitys, aumentando o reaproveitamento de código e melhorando
+    consideravelmente a manutenção.
