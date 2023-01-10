@@ -2,7 +2,8 @@
 
 /*
  * Callbacks são funções passadas como parâmetro para outras
- * funções.
+ * funções. Podem ser comparadas com HOFs, porém tem suas
+ * diferenças.
  */
 
 function teste($name)
