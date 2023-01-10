@@ -1,5 +1,6 @@
 Convenções do CakePHP
 
+
 Para Controllers:
     - Pluralizados;
     - CamelCased;
@@ -15,6 +16,7 @@ navegador web. Por exemplo, o /articles/view mapeia
 para o método view() do ArticlesController sem nenhum
 esforço. Métodos privados ou protegidos não podem ser
 acessados pelo roteamento.
+
 
 Considerações de URL para nomes de Controller:
 
@@ -45,3 +47,56 @@ $this->Html->link('link-title', [
     'controller' => 'ControllerName', // CamelCased
     'action' => 'actionName' // camelBacked
 ]
+
+Todos os arquivos que contém uma Classe tem de ter o mesmo nome
+da Classe contida. Por exemplo: se a classe Controller se chama
+"KissesAndHugsController", então seu arquivo deverá se chamar
+"KissesAndHugsController.php".
+
+
+Convenções para Models e Databases:
+
+Os nomes das classes de Tables são pluralizadas e CamelCased,
+por exemplo People, BigPeople e ReallyBigPeople; já seus corres-
+pondentes no banco de dados seriam snake_case e pluralizados,
+algo como people, big_people e really_big_people. Além disso
+podemos utilizar a biblioteca utility Cake\Utility\Inflector
+para checar o singular/plural de palavras.
+
+Chaves estrangeiras nos relacionamentos hasMany, belongsTo ou
+hasOne são reconhecidas por padrão como o nome (singular) da
+table relacionada seguida por _id. Então se Bakers hasMany Cakes,
+a table cakes irá referenciar-se para a table bakers através da
+chave estrangeira baker_id. Para uma tabela como category_types
+a qual o nome contém mais palavras, a chave estrangeira seria a
+category_type_id.
+
+tables de união, usadas no relacionamento BelongsToMany entre
+models, devem ser nomeadas depois das tables que ela está unindo,
+ordenadas em ordem alfabética (apples_zebras ao invés de zebras_apples).
+
+Convenções para Views:
+
+Os arquivos de template views são nomeadas seguindo as funções
+que a exibem do controller, separadas por sublinhado. A função
+getReady() da classe PeopleController buscará por um template
+view em templates/People/get_ready.php.
+
+O padrão é templates/Controller/underscored_function_name.php.
+
+- Table: “people”;
+- Classe Table: “PeopleTable”, encontrada em 
+src/Model/Table/PeopleTable.php;
+- Classe Entity: “Person”, encontrada em src/Model/Entity/Person.php;
+- Classe Controller: “PeopleController”, encontrada em 
+src/Controller/PeopleController.php;
+- View template, encontrado em templates/People/index.php;
+
+Utilizando estas convenções, o CakePHP sabe que uma requisição
+para "http://example.com/people/" mapeia para uma chamada da função
+index() do PeopleController, onde o model Person é automaticamente
+disponbilizado (e automaticamente amarrado à table ‘people’ no
+banco de dados), e então renderiza-se um arquivo view template.
+Nenhuma destes relacionamentos foi configurado de qualquer forma
+se não por criar classes e arquivos que você precisaria criar
+de qualquer forma.
