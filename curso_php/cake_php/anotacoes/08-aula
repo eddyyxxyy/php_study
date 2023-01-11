@@ -1,0 +1,120 @@
+Sobre o DebugKit do CakePHP
+
+O ícone no canto inferior direito da
+nossa aplicação nós temos o DebugKit
+do CakePHP.
+
+O DebugKit inicia "contraído", então
+é só clicar nele para expandi-lo. Assim
+teremos todas as abas (funções) que o
+Framework disponibiliza pra gente. E
+além disso, nós mesmos podemos criar mais
+funcionalidades e adicionar elas em abas
+do DebugKit.
+
+Falaremos sobre cada uma delas agora:
+
+Cache:
+    Aqui se encontram os botões para limpar o Cache
+    criado pelo próprio Framework. Também podemos
+    criar nossos próprios Caches e pode ser de qualquer
+    tipo de dado, e mesmo este que criamos aparecerá
+    nessa aba de Cache para podermos limpar de forma
+    manual quando quisermos.
+
+Deprecations:
+    Como estamos utilizando uma versão mais nova do
+    CakePHP, nenhuma depreciação aparecerá. Porém,
+    se você já programa em Cake e está migrando entre
+    versões mais antigas para mais novas, ele irá listar
+    todos os métodos que foram marcados como depreciados
+    pelo time de desenvolvimento do Framework.
+
+Environment:
+    Nessa aba temos todas as variáveis de ambiente,
+    separadas pelas que nós mesmos criamos, pelas
+    criadas pelo CakePHP, as que vem pelo "php.ini"
+    e as próprias constantes do PHP.
+
+History:
+    Esta aba seria um histórico de requisições,
+    cada requisição feita pelo navegador à nossa
+    aplicação é listada aqui. Conseguimos então
+    clicar nessas requisições e mover o DebugKit
+    para aquela requisição e avaliar/comparar com
+    uma requisição mais atual.
+
+Include:
+    Aqui estão todos os arquivos que foram incluídos
+    na requisição selecionada, seja a atual ou alguma
+    que estamos avaliando. Algo que, por exemplo, ao
+    acessar a aplicação em sua raiz, fará com que na
+    aba Include apareça em "app" que chamamos o controller,
+    view e template específico que setamos como raiz
+    da aplicação. Além de mostrar as atividades do vendor,
+    do próprio Framework, plugins e outros.
+
+Log:
+    Toda e qualquer requisição que gerar logs será
+    mostrada aqui. E também, quando quisermos, gerar
+    um log ou o CakePHP gerar um log por conta de um
+    erro, esse log/registro será mostrado nessa aba,
+    o que nos previne de ter de sempre abrir os arquivos
+    de log.
+
+Mail:
+    Sempre quando é enviado um email durante uma
+    requisição, o CakePHP lista esse e-mail e o
+    conteúdo dele nessa aba. Podemos testar o envio
+    de e-mails e ver o resultado final desse envio.
+
+Packages:
+    Aqui temos todos os pacotes que o CakePHP está
+    utilizando, conseguimos ver a versão que cada
+    pacote se encontra e ainda (por meio de um botão)
+    checar por Updates.
+
+Request:
+    Temos tudo aqui está vindo nessa requisição,
+    todos os detalhes, parametros, Actions, Controllers,
+    plugins, rotas que casam com o que foi passado na URL,
+    temos o Token, se é Ajax ou não, dados que vieram
+    por POST, por GET, temos tudo.
+
+Routes:
+    Todas as rotas que foram criadas estão mostradas
+    aqui, tendo duas que sempre estão lá:
+
+        _controller:index        /:controller
+        _controller:_action      /:controller/:action/*
+
+    Mostrando que tudo que está após a primeira barra
+    é considerado Controller e tudo que está após a
+    segunda barra é considerada Action, após isso temos
+    os parâmetros.
+
+Session:
+    Tudo que salvarmos na sessão do PHP estará listada
+    aqui, mas vale ressaltar que o CakePHP também aceita
+    que salvemos as sessões no Banco de Dados, não somente
+    na forma padrão do PHP.
+
+Sql Log:
+    Tudo que for gerado pelas sqls que executarem estarão
+    listadas aqui.
+
+Timer:
+    Mostra o quanto de memória foi utilizado para essa
+    requisição e quanto de memória foi gasto em cada
+    etapa da aplicação, na inicialização do Controller,
+    na renderização da View, etc. Também temos como foi
+    distribuído o tempo de execução entre cada etapa, e
+    isso é muito útil para ver onde nossa aplicação está
+    tendo algum tipo de gargalo.
+
+Variables:
+    Aqui ficam listadas todas as variáveis que enviarmos
+    para a View. Isso é útil quando queremos passar algo
+    para View, mas não queremos mostra-la de cara, pois
+    as vezes precisamos processar os dados contidos nessa
+    variável.
