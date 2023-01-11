@@ -1,0 +1,35 @@
+Para começarmos com a criação de nosso projeto,
+após darmos o comando:
+
+$ composer create-project --prefer-dist cakephp/app <nome_do_projeto>
+
+Podemos já começar a criar nossos próprios Controllers,
+que por conseguinte, nos levam a criar uma View para
+esse Controller. Seguindo as convenções de nomenclatura
+dos arquivos e diretórios, junto das convenções de criação
+de Classes e Actions (que são nossos Métodos), já podemos
+acessar a página criada colocando na URL o nome do arquivo
+da View.
+
+A convenção para o nome do Controller deverá ser CamelCase
+e com a palavra Controller no final:
+
+"PagesController"
+
+E para a View deste Controller utilizamos o mesmo nome,
+porém, sem a palavra Controller no final do arquivo.
+
+Logo, no diretório "src/Controller" teremos o arquivo
+"PagesController" (com um namespace específico, como
+"namespace App\Controller", e o import da classe
+"AppController", que advém do import, "use" no PHP,
+"use App\Controller\AppController". À partir disso
+podemos criar nossa Classe de mesmo nome do arquivo
+que a contém com os respectivos Actions(Métodos)).
+
+E no diretório "templates" teremos o diretório
+"Pages" que irá conter os arquivos com os respectivos
+Actions criados no Controller dessa View. E isso
+significa que para cada Action, para cada Método, da
+classe do Controller que corresponde à essa View,
+teremos um arquivo em "templates/DiretorioDaView/nome_da_view".
