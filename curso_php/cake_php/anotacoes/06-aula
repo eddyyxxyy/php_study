@@ -1,0 +1,70 @@
+Anotações sobre o sistema de Rotas do CakePHP.
+
+Um sistema de Rotas do CakePHP seria como o
+Framework interpreta a URL e redireciona o
+usuário para a página que ele quer acessar.
+
+O arquivo de rotas fica na pasta config e se
+chama "routes.php". 
+
+O Routes é utilizado para criar a raiz da aplicação,
+ou seja, o direcionamento do usuário pela aplicação
+até a View desejada, utilizando o escopo (que seria
+"/", a raiz da aplicação) e assinalando o Controller,
+Action e Views que correspondem à aquela URL.
+
+Também pode ser utilizada para dividir a aplicação
+em ambientes, como um painel administrativo, tendo
+a separação por meio das Views específicas após uma
+verificação de permissões (feita no Controller
+correspondente).
+
+Ou, se necessário, para simplesmente criar os redi-
+recionamentos que uma aplicação já existente precisa
+após uma migração para o Framework.
+
+De toda forma, não é necessário definir todas as
+rotas da nossa aplicação. O CakePHP define que
+quando acessamos um domínio, tudo que vem após
+a primeira barra seria o Controller e a partir
+da segunda barra seria a Action, à partir disso
+seriam os parâmetros dessas Actions. Por exemplo:
+
+
+    class PaginasController extends AppController
+    {
+        public function adicionar($param1, $param2, $param3)
+        {
+            echo $param1 . '<br>';
+            echo $param2 . '<br>';
+            echo $param3 . '<br>';
+            die;
+        }
+    }
+
+Com esse Controller não precisaremos criar uma View, pois ele
+mata o processo. Para testar como o sistema de rotas do CakePHP
+funciona (após criar a Action acima) é só acessar:
+
+www.dominio.com.br/paginas/adicionar/1/2/3
+
+E teremos na tela impresso:
+
+1
+2
+3
+
+
+ATENÇÃO!
+
+É importante ressaltar que o CakePHP faz todo o sistema de rotas
+por meio do arquivo ".htaccess". Nesse arquivo é utilizado um módulo
+chamado "mod_rewrite" do PHP, que pega tudo que está vindo pela
+URL e encaminha todo o endereço para um arquivo em específico.
+
+O arquivo que ele está sendo redirecionado fica no diretório
+"webroot", então quando acessamos um site ou sistema que está
+no CakePHP, o Apache pegará toda essa string da URL e vai passar
+como se fosse um parâmetro para a página "webroot/index.php" e
+a partir daí os scripts do CakePHP irão gerenciar essa URL e
+chamar os Controllers, Actions e Views relacionadas à essa URL.
