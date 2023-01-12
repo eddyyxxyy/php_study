@@ -1,0 +1,19 @@
+Padrões PSR
+
+Os Padrões PSR (PHP Standards Recommendations)
+são criados pela PHP Framework Interop Group.
+
+São recomendações que visam padronizar desde a
+forma de escrita até como a criação de classes.
+
+Não é obrigatório a sua utilização dentro de um
+framework, mas é ALTAMENTE RECOMENDÁVEL.
+
+Ao todo são 20 recomendações (algumas dessas re-
+comendações estão depreciadas, outras estão aguar-
+dando aprovação pela equipe que cria os padrões
+PSR).
+
+É praticamente NECESSÁRIO a utilização de algum
+linter ou checker para verificar e corrigir o
+código, sempre mantendo as conveções do PSR.
